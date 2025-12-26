@@ -1,49 +1,39 @@
 # 🌊 MacroFlow
 
-**MacroFlow** is a professional-grade companion application for custom HID macro pads. It allows users to visually remap keys, manage multiple functional layouts, and configure rotary encoders in real-time without manual firmware flashing.
+**MacroFlow** is a professional-grade companion application designed for custom HID macro pads. It provides a seamless interface for users to visually remap keys, manage multiple functional layouts, and configure rotary encoders in real-time, eliminating the need for manual firmware flashing.
 
----
 
-## ✨ Features
 
-* **Visual Key Remapping**: Intuitive GUI to assign actions to 12 physical keys and 2 rotary encoders.
-* **Rotary Encoder Support**: Dedicated logic for Volume Up/Down and Scroll functions via hardware rotation events.
-* **Layout Management**: Create, switch, and delete up to 3 custom profiles (e.g., Gaming, Productivity, Coding).
-* **Startup Integration**: Option to automatically run the application minimized in the system tray on Windows boot.
-* **Hardware Sync**: Direct communication via Raw HID to update device EEPROM mapping.
-* **Theme Support**: Toggle between a sleek Cyberpunk Dark Mode and a clean Light Mode.
+## ✨ Key Features
 
----
+* **Visual Key Remapping**: An intuitive graphical interface allows users to assign custom actions to 12 physical keys and 2 rotary encoders instantly.
+* **Rotary Encoder Support**: Includes dedicated logic for Volume Up/Down, Page Scrolling, and Zoom functions via hardware rotation events.
+* **Layout Management**: Effortlessly create, switch, and manage up to 3 custom profiles, such as 'Gaming', 'Productivity', and 'Coding'.
+* **Real-time Hardware Sync**: Changes are applied immediately to the device EEPROM using Raw HID communication protocols.
+* **Windows Integration**: Features native Windows support including automatic startup options and system tray minimization.
+* **Modern Interface**: A high-performance UI featuring custom smooth-scroll animations and a responsive design.
 
-## 🛠️ Tech Stack
+## 🛠️ Technical Stack
 
-* **Frontend**: HTML5, CSS3, JavaScript (Vanilla).
-* **Backend**: Python 3.x with PySide6 (Qt for Python).
-* **Communication**: QWebChannel (JS-Python Bridge) and `hidapi` for hardware interaction.
-* **OS Integration**: Windows User32 API for global keystroke injection.
-
----
+* **Frontend**: Developed using HTML5, CSS3, and Vanilla JavaScript.
+* **Backend**: Powered by Python 3.x and the PySide6 (Qt for Python) framework.
+* **Communication**: Utilizes `QWebChannel` for the JavaScript-Python bridge and `hidapi` for low-level hardware interaction.
+* **OS Integration**: Employs Windows User32 API for global keystroke and input injection.
 
 ## 📂 Project Structure
 
-* `app.py`: Main application entry point and System Tray logic.
-* `backend.py`: Core logic for layout management and hardware sync.
-* `device.py`: Low-level HID communication and event listening.
-* `input_engine.py`: Windows-specific key injection and QMK mapping codes.
-* `ui/`: Web-based interface files.
-
----
+* `app.py`: Main application entry point containing the UI initialization and System Tray logic.
+* `backend.py`: Core business logic responsible for layout management and hardware synchronization.
+* `device.py`: Handles low-level HID communication and real-time event listening.
+* `input_engine.py`: Manages Windows-specific key injection and QMK mapping codes.
+* `ui/`: Directory containing all web-based interface assets including `index.html`, `landing.css`, and `landing.js`.
 
 ## 🚀 Installation & Setup
 
-1. **Download the Installer**: Visit [macroflow.info](http://macroflow.info) to download `MacroFlow_Setup.exe`.
-2. **Hardware**: Connect your QMK-powered macro pad (VID: `0xFEED`, PID: `0x4043`).
-3. **Run**: Launch MacroFlow and start remapping!
+1.  **Hardware**: Connect your QMK-powered macro pad (Compatible with VID: `0xFEED`, PID: `0x4043`).
+2.  **Software**: Download the `MacroFlow_Setup.exe` installer from the latest GitHub release.
+3.  **Run**: Launch MacroFlow and begin customizing your hardware workflow immediately.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Developed by **Malik** as a Final Year Project.
+**Developed by Malik K. as a Final Year Project.**
