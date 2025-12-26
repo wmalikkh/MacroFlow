@@ -55,19 +55,6 @@ This approach ensures flexibility without sacrificing stability.
 
 ---
 
-## 📂 Project Structure
-
-```
-.
-├── app.py            # Application entry point and system tray logic
-├── backend.py        # Layout management and system coordination
-├── device.py         # Low-level HID communication and event handling
-├── input_engine.py   # Windows key injection and QMK mapping logic
-└── ui/               # Web-based UI (HTML, CSS, JavaScript)
-```
-
----
-
 ## 🚀 Installation & Setup
 
 1. **Hardware**  
