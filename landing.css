@@ -38,7 +38,7 @@ body {
     font-size: 1.2rem;
 }
 
-.logo img { height: 32px; width: 32px; border-radius: 6px; }
+.logo img { height: 32px; width: 32px; border-radius: 6px; object-fit: cover;}
 
 .nav-links a {
     color: var(--muted);
@@ -134,32 +134,6 @@ h1 {
 
 .secondary-btn:hover { border-color: var(--muted); }
 
-.compatibility { color: var(--muted); opacity: 0.7; }
-
-/* SCREENSHOT MOCKUP */
-.hero-image {
-    margin-top: 60px;
-    perspective: 1000px;
-}
-
-.browser-mockup {
-    background: var(--panel);
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.05);
-    transform: rotateX(5deg);
-    transition: transform 0.5s ease;
-}
-
-.browser-mockup:hover { transform: rotateX(0deg); }
-
-.browser-mockup img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-}
-
 /* FEATURES GRID */
 .features {
     padding: 100px 20px;
@@ -239,10 +213,12 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     .hero-buttons { flex-direction: column; }
-    .browser-mockup { transform: none; }
     .footer-content { flex-direction: column; gap: 20px; text-align: center; }
     .footer-right { justify-content: center; }
+    /* Mobile Social Alignment */
+    .card { justify-content: center; width: 100%; }
 }
+
 /* HERO GRAPHIC - VISUAL MACRO PAD */
 .hero-graphic {
     margin-top: 50px;
@@ -289,4 +265,94 @@ footer {
 
 .key-glow:hover::after {
     opacity: 1;
+}
+
+/* ========================================= */
+/* SOCIAL CARD STYLING (5 ICONS)             */
+/* ========================================= */
+.card {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 0;
+    gap: 15px; /* Spacing between icons */
+}
+
+/* For all social containers */
+.socialContainer {
+    width: 45px;
+    height: 45px;
+    background-color: var(--panel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    text-decoration: none; /* Removed underline from links */
+}
+
+/* Instagram Hover (Pink) */
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+    transform: translateY(-5px);
+}
+
+/* X Hover (Black) */
+.containerTwo:hover {
+    background-color: #000000;
+    border-color: #333;
+    transition-duration: 0.3s;
+    transform: translateY(-5px);
+}
+
+/* Email Hover (Blue/Cyan) */
+.containerThree:hover {
+    background-color: var(--accent);
+    transition-duration: 0.3s;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* GitHub Hover (Purple) */
+.containerFour:hover {
+    background-color: #8B5CF6; 
+    transition-duration: 0.3s;
+    transform: translateY(-5px);
+}
+
+/* Documentation Hover (Green) */
+.containerFive:hover {
+    background-color: #10B981; 
+    transition-duration: 0.3s;
+    transform: translateY(-5px);
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+}
+
+.socialSvg {
+    width: 20px;
+    height: 20px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
